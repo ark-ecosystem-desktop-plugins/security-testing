@@ -1,0 +1,12 @@
+{
+  "name": "security-testing",
+  "version": "0.0.1",
+  "title": "Security Testing",
+  "description": "A collection of page components to test security.",
+  "main": "index.js",
+  "author": "Alex Barnsley <alex@ark.io>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.6"
+  }
+}
