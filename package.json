@@ -5,8 +5,5 @@
   "description": "A collection of page components to test security.",
   "main": "index.js",
   "author": "Alex Barnsley <alex@ark.io>",
-  "license": "MIT",
-  "dependencies": {
-    "vue": "^2.6.6"
-  }
+  "license": "MIT"
 }
