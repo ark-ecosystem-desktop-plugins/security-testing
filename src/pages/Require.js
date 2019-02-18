@@ -13,13 +13,13 @@ module.exports = {
 
       <button v-if="!showThis" @click="testMethod">Trigger</button>
 
-      <div v-if="false" style="visibility: hidden">
-        {{ (require('fs') ? onRender = true : onRender = false) + '' }}
+      <div style="visibility: hidden">
+        {{ (typeof require !== 'undefined' && require('fs') ? onRender = true : onRender = false) + JSON.stringify(onRender) }}
       </div>
 
-      <div v-if="false && showThis" style="visibility: hidden">
+      <div v-if="showThis" style="visibility: hidden">
         <br />
-        trigger require: {{ (require('fs') ? onTriggerRender = true : onTriggerRender = false) }}
+        trigger require: {{ (typeof require !== 'undefined' && require('fs') ? onTriggerRender = true : onTriggerRender = false) + JSON.stringify(onTriggerRender) }}
       </div>
     </div>
   `,
@@ -75,9 +75,9 @@ module.exports = {
     globalComputed: function () {
       try {
         const fs = global.require('fs')
-        this.onComputed = true
+        this.onGlobalComputed = true
       } catch (err) {
-        this.onComputed = false
+        this.onGlobalComputed = false
       }
 
       return ''

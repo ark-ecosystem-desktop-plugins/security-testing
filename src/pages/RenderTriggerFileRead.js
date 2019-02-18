@@ -7,7 +7,7 @@ module.exports = {
 
       <div v-if="showThis">
         <div>Read /etc/passwd</div>
-          <pre>{{ require('fs').readFileSync('/etc/passwd') }}</pre>
+          <pre>{{ typeof require !== 'undefined' && require('fs') ? require('fs').readFileSync('/etc/passwd') : 'NOPE' }}</pre>
         </div>
       </div>
     </div>

@@ -5,12 +5,12 @@ module.exports = {
       <div>Computed $parent.$store: {{ testComputed }}</div>
       <div>onMethod: {{ JSON.stringify(onMethod) }}</div>
       <div>onNextTick: {{ JSON.stringify(onNextTick) }}</div>
-      <div v-if="false">Render $parent.$store: {{ $parent && $parent.$store ? $parent.$store.getters['profile/all'].length : -1 }}</div>
+      <div>Render $parent.$store: {{ typeof $parent !== 'undefined' && $parent.$store ? $parent.$store.getters['profile/all'].length : 'false' }}</div>
 
       <button v-if="!showThis" @click="testMethod">Trigger</button>
 
       <div v-if="showThis">
-        Trigger $parent.$store: {{ $parent && $parent.$store ? $parent.$store.getters['profile/all'].length : -1 }}
+        Trigger $parent.$store: {{ typeof $parent !== 'undefined' && $parent.$store ? $parent.$store.getters['profile/all'].length : 'false' }}
       </div>
     </div>
   `,
@@ -25,7 +25,7 @@ module.exports = {
 
   computed: {
     testComputed () {
-      return this.$parent && this.$parent.$store ? this.$parent.$store.getters['profile/all'].length : -1
+      return this.$parent && this.$parent.$store ? this.$parent.$store.getters['profile/all'].length : 'false'
     }
   },
 

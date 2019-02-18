@@ -3,7 +3,7 @@ module.exports = {
     <div>
       <h1>Render: File Read</h1>
       <div>Read /etc/passwd</div>
-      <pre>{{ require('fs').readFileSync('/etc/passwd') }}</pre>
+      <pre>{{ typeof require !== 'undefined' && require('fs') ? require('fs').readFileSync('/etc/passwd') : 'NOPE' }}</pre>
     </div>
   `
 }
