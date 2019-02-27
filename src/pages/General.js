@@ -15,13 +15,13 @@ module.exports = {
       <div>
         <h2>For loops</h2>
         <div
-          v-if="value in testComputedArray"
+          v-for="value in testComputedArray"
         >
           {{ value }}
         </div>
 
         <div
-          v-if="(value, key) in testComputedObject"
+          v-for="(value, key) in testComputedObject"
           :key="key"
         >
           {{ key }}: {{ value }}
