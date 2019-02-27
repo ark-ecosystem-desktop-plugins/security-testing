@@ -12,20 +12,21 @@ module.exports = {
 
       <button v-if="!showThis" @click="triggerShowThis">Trigger</button>
 
-      <!-- FIXME is iteration on arrays broken?
-      <div
-        v-if="value in testComputedArray"
-      >
-        {{ value }}
-      </div> -->
+      <div>
+        <h2>For loops</h2>
+        <div
+          v-if="value in testComputedArray"
+        >
+          {{ value }}
+        </div>
 
-      <!-- FIXME is iteration on objects broken?
-      <div
-        v-if="(value, key) in testComputedObject"
-        :key="key"
-      >
-        {{ key }}: {{ value }}
-      </div> -->
+        <div
+          v-if="(value, key) in testComputedObject"
+          :key="key"
+        >
+          {{ key }}: {{ value }}
+        </div>
+      </div>
     </div>
   `,
 
