@@ -3,6 +3,8 @@ module.exports = {
     <div>
       <h1>DOM</h1>
 
+      <button v-if="!showTrigger" @click="triggerMethod">Trigger</button>
+
       <div style="margin-top: 2rem">
         <h2>Can I access external DOM information?</h2>
         <span v-if="readContent" style="background-color: red; color: white">{{ readContent }}</span>
@@ -10,18 +12,41 @@ module.exports = {
       </div>
 
       <div style="margin-top: 2rem">
+        <h2>Can I access external DOM information <strong>on render</strong>?</h2>
+        <span v-if="titleRender" style="background-color: red; color: white">{{ titleRender }}</span>
+        <span v-if="!titleRender" style="background-color: green; color: white">NO</span>
+
+        <div style="visibility: hidden">
+          {{ (typeof document !== 'undefined' ? titleRender = document.querySelector('.ProfileAvatar').title : titleRender = false) }}
+        </div>
+      </div>
+
+      <div v-if="showTrigger" style="margin-top: 2rem">
+        <h2>Can I access external DOM information <strong>on render trigger</strong>?</h2>
+        <span v-if="titleRenderTrigger" style="background-color: red; color: white">{{ titleRenderTrigger }}</span>
+        <span v-if="!titleRenderTrigger" style="background-color: green; color: white">NO</span>
+
+        <div style="visibility: hidden">
+          {{ (typeof document !== 'undefined' ? titleRenderTrigger = document.querySelector('.ProfileAvatar').title : titleRenderTrigger = false) }}
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem">
         <h2>Can I add content to the external DOM?</h2>
-        <span>{{ appendToBottom }}</span>
+        <span v-if="appendToBottom" style="background-color: red; color: white">{{ appendToBottom }}</span>
+        <span v-if="!appendToBottom" style="background-color: green; color: white">NO</span>
       </div>
 
       <div style="margin-top: 2rem">
         <h2>Can I modify existing nodes of the external DOM?</h2>
-        <span>{{ alterAvatar }}</span>
+        <span v-if="alterAvatar" style="background-color: red; color: white">{{ alterAvatar }}</span>
+        <span v-if="!alterAvatar" style="background-color: green; color: white">NO</span>
       </div>
 
       <div style="margin-top: 2rem">
         <h2>Can I remove existing nodes of the external DOM?</h2>
-        <span>{{ removeSidebarItem }}</span>
+        <span v-if="removeSidebarItem" style="background-color: red; color: white">{{ removeSidebarItem }}</span>
+        <span v-if="!removeSidebarItem" style="background-color: green; color: white">NO</span>
       </div>
 
       <div style="margin-top: 2rem">
@@ -55,7 +80,9 @@ module.exports = {
 
   data () {
     return {
-      currency: null
+      currency: null,
+      titleRender: null,
+      showTrigger: false
     }
   },
 
@@ -158,6 +185,12 @@ module.exports = {
       })
 
       return 'Disable the plugin, go to the dashboard, and see the console'
+    }
+  },
+
+  methods: {
+    triggerMethod () {
+      this.showTrigger = true
     }
   }
 }
