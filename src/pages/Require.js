@@ -1,6 +1,6 @@
 module.exports = {
   template: `
-    <div>
+    <div class="bg-theme-feature rounded-lg p-10">
       <h1>Require</h1>
       <div>onCreated: {{ JSON.stringify(onCreated) }}</div>
       <div>onMounted: {{ JSON.stringify(onMounted) }}</div>

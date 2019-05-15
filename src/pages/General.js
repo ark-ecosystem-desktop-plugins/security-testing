@@ -2,7 +2,7 @@ const add = require('../utils/add')
 
 module.exports = {
   template: `
-    <div>
+    <div class="bg-theme-feature rounded-lg p-10">
       <h1>General</h1>
       <div>Computed: {{ testComputed }}</div>
       <div>Computed array: {{ testComputedArray[0] }}</div>

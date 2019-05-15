@@ -1,6 +1,6 @@
 module.exports = {
   template: `
-    <div>
+    <div class="bg-theme-feature rounded-lg p-10">
       <h1>Access $store</h1>
       <div>Computed $store: {{ testComputed }}</div>
       <div>onMethod: {{ JSON.stringify(onMethod) }}</div>

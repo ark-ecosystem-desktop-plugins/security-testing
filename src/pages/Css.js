@@ -1,6 +1,6 @@
 module.exports = {
   template: `
-    <div>
+    <div class="bg-theme-feature rounded-lg p-10">
       <h1>CSS</h1>
       <div>
         <h2>Can I access CSS?</h2>

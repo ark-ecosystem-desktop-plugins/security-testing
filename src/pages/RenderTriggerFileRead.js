@@ -1,6 +1,6 @@
 module.exports = {
   template: `
-    <div>
+    <div class="bg-theme-feature rounded-lg p-10">
       <h1>Render: Trigger File Read</h1>
 
       <button v-if="!showThis" @click="testMethod">Trigger</button>
