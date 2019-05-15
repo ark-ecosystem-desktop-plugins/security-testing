@@ -5,5 +5,10 @@
   "description": "A collection of page components to test security.",
   "main": "index.js",
   "author": "Alex Barnsley <alex@ark.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "permissions": [
+    "COMPONENTS",
+    "ROUTES",
+    "MENU_ITEMS"
+  ]
 }
